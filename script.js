@@ -30,18 +30,25 @@ button.addEventListener('click', intentar);
 
 function intentar(){
     const valor = document.getElementById("guess-input");
-    value.toUpperCase();
+    console.log(valor)
+    if (INTENTO === palabra)
     
     console.log("ingreso", valor);
 if (VALOR === palabra){
-    console.log("Ganasta");
+    console.log("Ganaste");
 }
 for (i in palabra){
     if (palabra[i] === VALOR[i] ){
-        console.log(VALOR[i])
-    }
-    console.log(palabra[i])
-}
+        console.log(VALOR[i], "verde");
+    }else if(palabra.includes(VALOR[i]))
+    console.log(palabra[i], "amarillo");
+}else (
+    console.log(palabra[i], "gris")
+)
 
 }
 
+function leerIntento[]{
+    const VALOR = document.getElementById("quess/input"), value.toUpperCase();
+    return VALOR;
+}
