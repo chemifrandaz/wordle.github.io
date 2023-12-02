@@ -1,34 +1,21 @@
-/*let vector = ["Programando" ; "Paraguay" ; "Encarnacion" ; "2023"]
-
-console.log("antes",vector);
-
-console.log(vector.length);
-
-vector[length-1];
-
-console.log(vector[0]);
-console.log(vector[1]);
-console.log(vector[2]);
-console.log(vector[3]);
-
-for (let i = 0; i < vector.length; i++){
-    console.log("va a ser mi indice".i);
-}
-console.log("termino el bucle");*/
-
-
-/*palabra a adivinar
-palabra ingresa
-recorrer y adivinar letra por letra*/
-
-//let palabra = "APPLE"
-
 let lista = ("MOUSE", "APPLE", "HOUSE", "GREEN")
 
 let intento = 6;
 
+window.addEventListener('load', init);
+function init(){
+    console.log('Esto se ejecuta solo cuando se carga la pagina web')
+}
+const button = document.getElementById("guess-button");
+button.addEventListener("click", intentar);
+
+const input = document.getElementById("guess-input");
+const valor = input.value;
+
 console.log("random"[Math.floor(Math.random())*lista.length])
 let palabra = lista [2]
+
+
 
 const grid = document.getElementById("grid");
 const ROW = document.createElement("div");
@@ -37,6 +24,9 @@ ROW.className = "row;"
 
 function intentar(){
     const VALOR = leerIntento();
+let intento = document.getElementById("guess-input");
+    intento = intento.value;
+    intento = intento.toUpperCase(); 
     console.log(VALOR)
 
 
@@ -46,11 +36,16 @@ function intentar(){
     }
     
     
+    
 if (VALOR === palabra){
     console.log("Ganaste");
     terminar("<h1>GANASTE!😀</h1>")
     return
 }
+
+const GRID = document.getElementById("grid");
+    const ROW = document.createElement('div');
+    ROW.className = 'row';
 for (i in palabra){
     const SPAN = document.createElement('span');
         SPAN.className = 'letter';
@@ -69,7 +64,7 @@ for (i in palabra){
         SPAN.innerHTML = VALOR[i];
     }
     ROW.appendChild (SPAN)
-GRIP.appendChild (ROW)
+GRID.appendChild (ROW)
 }
 intento = intento - 1;
 if (intento ==0){
